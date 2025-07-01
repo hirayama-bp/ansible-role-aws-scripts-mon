@@ -3,10 +3,10 @@
   fail: msg="The AWS access and/or secret key(s) is/are not defined!"
   when: not aws_scripts_mon_use_iam|bool and (aws_scripts_mon_access_key is none or aws_scripts_mon_secret_key is none)
 
-- include: debian.yml
+- include_tasks: debian.yml
   when: ansible_os_family == 'Debian'
 
-- include: redhat.yml
+- include_tasks: redhat.yml
   when: ansible_os_family == 'RedHat'
 
 - name: Download and install the monitoring scripts
