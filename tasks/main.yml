@@ -10,7 +10,7 @@
   when: ansible_os_family == 'RedHat'
 
 - name: Download and install the monitoring scripts
-  unarchive: src=http://aws-cloudwatch.s3.amazonaws.com/downloads/CloudWatchMonitoringScripts-{{ aws_scripts_mon_version }}.zip
+  unarchive: src=https://aws-cloudwatch.s3.amazonaws.com/downloads/CloudWatchMonitoringScripts-{{ aws_scripts_mon_version }}.zip
              dest={{ aws_scripts_mon_base_directory }}
              owner={{ aws_scripts_mon_cron_user }}
              creates={{ aws_scripts_mon_base_directory }}/aws-scripts-mon/mon-put-instance-data.pl
